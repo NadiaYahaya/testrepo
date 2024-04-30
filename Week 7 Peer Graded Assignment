@@ -4,8 +4,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 
 # Load the dataset
-# Assuming you have a dataset named 'boston_data.csv'
-data = pd.read_csv('boston_data.csv')
+# Assuming you have a dataset named 'boston_data.txt'
+data = pd.read_csv('boston_data.txt')
 
 # Task 1: Boxplot for the median value of owner-occupied homes
 plt.figure(figsize=(8,6))
