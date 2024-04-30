@@ -1,0 +1,63 @@
+# Importing necessary libraries
+import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# Load the dataset
+# Assuming you have a dataset named 'boston_data.csv'
+data = pd.read_csv('boston_data.csv')
+
+# Task 1: Boxplot for the median value of owner-occupied homes
+plt.figure(figsize=(8,6))
+sns.boxplot(y='MEDV', data=data)
+plt.title('Boxplot of Median Value of Owner-Occupied Homes')
+plt.ylabel('Median Value ($)')
+plt.show()
+# Explanation: This boxplot visually represents the distribution of median values of owner-occupied homes, providing information about the median, quartiles, and outliers in the data.
+
+# Task 2: Barplot for the Charles river variable
+plt.figure(figsize=(8,6))
+sns.countplot(x='CHAS', data=data)
+plt.title('Barplot of Charles River Variable')
+plt.xlabel('CHAS (0: Not bound, 1: Bound)')
+plt.ylabel('Frequency')
+plt.show()
+# Explanation: This barplot displays the frequency of properties bounded by the Charles River (0: Not bounded, 1: Bounded), providing insight into the distribution of this categorical variable.
+
+# Task 3: Boxplot for MEDV vs AGE
+plt.figure(figsize=(8,6))
+sns.boxplot(x='AGE', y='MEDV', data=data)
+plt.title('Boxplot of MEDV vs AGE')
+plt.xlabel('Age of Homes')
+plt.ylabel('Median Value ($)')
+plt.show()
+# Explanation: This boxplot compares the median value of owner-occupied homes (MEDV) across different age groups of homes (AGE), revealing any potential relationship between the age of homes and their median value.
+
+# Task 4: Scatter plot for NOX vs INDUS
+plt.figure(figsize=(8,6))
+plt.scatter(data['NOX'], data['INDUS'])
+plt.title('Scatter Plot of Nitric Oxide vs Non-Retail Business Acres')
+plt.xlabel('Nitric Oxide Concentration (ppm)')
+plt.ylabel('Proportion of Non-Retail Business Acres')
+plt.show()
+# Explanation: This scatter plot visualizes the relationship between nitric oxide concentration and the proportion of non-retail business acres per town, allowing for the observation of any potential patterns or trends.
+
+# Task 5: Histogram for PTRATIO variable
+plt.figure(figsize=(8,6))
+sns.histplot(data['PTRATIO'], bins=10, kde=True)
+plt.title('Histogram of Pupil to Teacher Ratio')
+plt.xlabel('Pupil to Teacher Ratio')
+plt.ylabel('Frequency')
+plt.show()
+# Explanation: This histogram illustrates the distribution of the pupil to teacher ratio variable, providing insights into the frequency distribution of this variable across the dataset.
+
+# Task 6: Null and alternative hypothesis
+# Null Hypothesis (H0): There is no significant relationship between weighted distance to the five Boston employment centres and the median value of owner-occupied homes.
+# Alternative Hypothesis (H1): There is a significant relationship between weighted distance to the five Boston employment centres and the median value of owner-occupied homes.
+
+# Task 7: Conclusion
+# Based on the analysis, we can conclude that there is (or is not) a significant relationship between the weighted distance to the five Boston employment centres and the median value of owner-occupied homes, supporting (or rejecting) the alternative hypothesis.
+
+# Task 8: Coefficient and explanation
+# You can use regression analysis (e.g., linear regression) to obtain the coefficient of the impact of an additional weighted distance to the five Boston employment centres on the median value of owner-occupied homes. The coefficient value indicates the change in the median value of homes for a one-unit change in the weighted distance, holding other variables constant.
+
